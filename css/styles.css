@@ -67,7 +67,6 @@ figure {
 	margin: 1em 40px
 }
 hr {
-	-moz-box-sizing: content-box;
 	box-sizing: content-box;
 	height: 0
 }
@@ -149,9 +148,6 @@ html {
 	word-wrap: break-word;
 	-ms-word-break: break-all;
 	word-break: break-word;
-	-ms-hyphens: auto;
-	-moz-hyphens: auto;
-	-webkit-hyphens: auto;
 	hyphens: auto;
 	orphans: 3;
 	widows: 3
@@ -165,10 +161,6 @@ body {
 	color: #4E4E56;
 }
 ::selection {
-	color: #fff;
-	background: #01bd00;
-}
-::-moz-selection {
 	color: #fff;
 	background: #01bd00;
 }
@@ -206,10 +198,6 @@ hr {
 	border-width: 1px 0px 0px;
 	border-style: solid none none;
 	border-color: #4E4E56 -moz-use-text-color -moz-use-text-color;
-	-moz-border-top-colors: none;
-	-moz-border-right-colors: none;
-	-moz-border-bottom-colors: none;
-	-moz-border-left-colors: none;
 	border-image: none;
 }
 .container {
