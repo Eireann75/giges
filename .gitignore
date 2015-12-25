@@ -42,3 +42,5 @@ Thumbs.db
 .psd
 .ai
 prepros.cfg
+bower.json
+bower_components
