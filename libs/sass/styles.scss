@@ -140,6 +140,10 @@ table {
 td, th {
 	padding: 0
 }
+
+$giges-gruen: #01bd00;
+$giges-orange: #ff6b01;
+
 @viewport {
 	width: device-width
 }
@@ -176,8 +180,8 @@ main, aside {
 }
 a {
 	text-decoration: none;
-	color: #ff6b01;
-	border-bottom: 1px solid #ff6b01;
+	color: $giges-orange;
+	border-bottom: 1px solid $giges-orange;
 	transition: all 0.2s ease 0s;
 }
 a:focus, a:hover {
@@ -208,10 +212,4 @@ hr {
 .logo {
 	padding-bottom: 20px;
 	max-width: 400px;
-}
-.gruen {
-	color: #01bd00;
-}
-.orange {
-	color: #ff6b01;
 }

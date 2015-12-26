@@ -1,7 +1,19 @@
 {
   "name": "giges",
+  "description": "Tutorial-Webseite",
   "version": "0.1.0",
+  "license": "blub",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/Eireann75/giges.git"
+  },
   "devDependencies": {
-    "grunt": "~0.4.5"
+    "grunt": "~0.4.5",
+    "grunt-contrib-concat": "^0.5.1",
+    "grunt-contrib-imagemin": "^1.0.0",
+    "grunt-contrib-uglify": "^0.11.0",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-sass": "^1.1.0",
+    "grunt-svgmin": "^3.1.0"
   }
 }
