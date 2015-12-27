@@ -1,6 +1,9 @@
 @import "_partials/normalize";
 @import "_partials/vars";
 
+p {
+	padding-bottom: $testvar;
+}
 
 @viewport {
 	width: device-width
