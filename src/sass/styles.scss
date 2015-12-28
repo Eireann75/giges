@@ -1,0 +1,102 @@
+@import "partials/normalize";
+@import "partials/vars";
+
+$giges-gruen: #01bd00;
+$giges-orange: #ff6b01;
+$giges-copy-color: #4e4e56;
+$global-padding: 30px;
+$global-font-weight: 400;
+$global-font-size: 16px;
+$global-line-height: 1.6;
+$font-family-headline: 'PT Mono', sans-serif;
+$font-family-copy: 'PT Sans', sans-serif;
+
+@viewport {
+  width: device-width;
+}
+
+html {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  -ms-word-break: break-all;
+  word-break: break-word;
+  hyphens: auto;
+  orphans: 3;
+  widows: 3;
+}
+
+body {
+  font: {
+    family: $font-family-copy;
+    weight: $global-font-weight;
+    size: $global-font-size;
+  }
+  line-height: $global-line-height;
+  color: $giges-copy-color;
+}
+
+address {
+  font-style: normal;
+}
+
+::selection {
+  color: #fff;
+  background: #01bd00;
+}
+
+h1, h2, h3, h2, h5, h6 {
+  font-family: $font-family-headline;
+  font-weight: $global-font-weight;
+}
+
+h1, h2, h3 {
+  page-break-after: avoid;
+}
+
+main, aside {
+  padding-bottom: $global-padding;
+}
+
+a {
+  text-decoration: none;
+  color: $giges-orange;
+  border-bottom: 1px solid $giges-orange;
+  transition: all 0.2s ease 0s;
+
+  &:focus, &:hover {
+    color: #CC5500;
+  }
+
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+ul {
+  list-style-position: inside;
+  padding-left: 0;
+}
+
+hr {
+  margin: $global-padding 0;
+  border: {
+    width: 1px 0px 0px;
+    style: solid none none;
+    color: $giges-copy-color -moz-use-text-color -moz-use-text-color;
+    image: none;
+  }
+}
+
+.container {
+  margin: 0 auto;
+  padding: ($global-padding*2) $global-padding;
+  max-width: 720px;
+}
+
+.logo {
+  padding-bottom: $global-padding;
+  max-width: 400px;
+}
