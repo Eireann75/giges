@@ -1,16 +1,16 @@
-@import "_partials/normalize";
+@import "partials/normalize";
 @import "../../node_modules/susy/sass/susy";
 
 $susy: (
-  global-box-sizing: border-box,
-  use-custom: (rem: true)
-);
+	global-box-sizing: border-box,
+	use-custom: (rem: true)
+	);
 
 @include border-box-sizing;
 
 .container {
-  background-color: #fbeecb;
-  @include container;
+	background-color: #fbeecb;
+	@include container (40rem);
 }
 .ag1 {
 	@include span(2 of 10);
@@ -19,62 +19,66 @@ $susy: (
 	@include span(6 of 10);
 }
 .ag3 {
-  @include span(2 of 10 last);
+	@include span(2 of 10 last);
 }
 .ag4 {
-  @include span(3 of 6);
+	@include span(3 of 6);
 }
 .ag5 {
-  @include span(3 of 6 last);
+	@include span(3 of 6 last);
 }
 .ag6 {
-  @include span(2 of 6);
+	@include span(2 of 6);
 }
 .ag7 {
-  @include span(4 of 6 last);
+	@include span(4 of 6 last);
 }
 .ag8 {
-  @include span(2 of 4);
+	@include span(2 of 4);
 }
 .ag9 {
-  @include span(2 of 4 last);
+	@include span(2 of 4 last);
 }
 .ag10 {
-  clear: both;
-  // Alternatively, you can now use the span mixin with the full keyword to tell Susy this should be a 100% width 
-  // @include span(full);
+	clear: both;
+	// Alternatively, you can now use the 'span' mixin with the 'full' keyword to tell Susy this should be a 100% width 
+	// @include span(full);
 }
 .ag1, .ag3 {
-  background-color: #71dad2;
+	background-color: #71dad2;
 }
 
 .ag2 {
-  background-color: #fae7b3;
+	background-color: #fae7b3;
 }
 
 .ag4,.ag5,.ag8,.ag9 {
-  background-color: #ee9e9c;
+	background-color: #ee9e9c;
 }
 
 .ag6 {
-  background-color: #f09671;
+	background-color: #f09671;
 }
 
 .ag7 {
-  background-color: #f6d784;
+	background-color: #f6d784;
 }
 
 .ag10 {
-  background-color: #ea9fc3;
+	background-color: #ea9fc3;
 }
 
-/**
- * Text Styles
- */
+/*
+Text Styles
+*/
+html {
+	font-size: 112.5%;
+}
+
 h2 {
-  text-align: center;
-  font-size: 1rem;
-  font-weight: normal;
-  padding-top: 1.8rem;
-  padding-bottom: 1.8rem;
+	text-align: center;
+	font-size: 1rem;
+	font-weight: normal;
+	padding-top: 1.8rem;
+	padding-bottom: 1.8rem;
 }

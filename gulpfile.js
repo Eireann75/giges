@@ -1,5 +1,6 @@
 var gulp = require('gulp');
-var sass = require('gulp-sass');
+var sass = require('gulp-sass'),
+	path = require('path');
 var autoprefixer = require('gulp-autoprefixer');
 var sourcemaps = require('gulp-sourcemaps');
 var browserSync = require('browser-sync');
@@ -32,6 +33,10 @@ gulp.task('sass', function() {
 	.pipe(sourcemaps.init())
 	.pipe(sass({
 		outputStyle: 'expanded',
+		includePaths: [
+			path.join(__dirname,'node_modules/support-for/sass'),
+			path.join(__dirname,'node_modules/typey/stylesheets'),
+		],
 	}).on('error', sass.logError))
 	.pipe(autoprefixer({
 		browsers: ['last 2 versions'],

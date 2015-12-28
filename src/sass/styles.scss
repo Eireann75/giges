@@ -1,102 +1,147 @@
-@import "partials/normalize";
+@import "../../node_modules/normalize-scss/fork-versions/typey/normalize";
 @import "partials/vars";
 
-$giges-gruen: #01bd00;
-$giges-orange: #ff6b01;
-$giges-copy-color: #4e4e56;
-$global-padding: 30px;
-$global-font-weight: 400;
-$global-font-size: 16px;
-$global-line-height: 1.6;
-$font-family-headline: 'PT Mono', sans-serif;
-$font-family-copy: 'PT Sans', sans-serif;
+$support-for: (
+	'*': -2
+	);
+
+// Typey variables
+$base-unit:						rem;
+$base-font-size:				18px;		// 18px = 1rem
+$base-line-height:				25.2px;		// 18px*1.4=25.2px (1.4rem)
+$line-height-method:			rythm;
+//$base-line-height-ratio:		1.4;		only needed for 'ratio'-method
+$print-font-size:				14pt;
+$font-size: (
+	xxl:						49.392px,	// h1
+	xl:							35.28px,	// h2
+	l:							25.2px,		// h3
+	m:							18.0px,		// h4 (base)
+	s:							12.857px,	// h5
+	xs:		 					9.184px,	// h6
+);
+$font-weight: (
+	bold:						700,
+	normal:						400,
+	light:						300
+);
+
+//$typey-debug: true;
+//$typey-debug-color: red;
+
+$giges-gruen:					#01bd00;
+$giges-orange:					#ff6b01;
+$giges-copy-color:				#4e4e56;
+$giges-headline-font-family:	'Vollkorn', sans-serif;
+$giges-base-font-family:		'Vollkorn', sans-serif;
 
 @viewport {
-  width: device-width;
+	width: device-width;
 }
 
 html {
-  overflow-wrap: break-word;
-  word-wrap: break-word;
-  -ms-word-break: break-all;
-  word-break: break-word;
-  hyphens: auto;
-  orphans: 3;
-  widows: 3;
+	@include define-type-sizing;
+	font-weight: weight(normal);
+	font-family: $giges-base-font-family;
+	overflow-wrap: break-word;
+	word-wrap: break-word;
+	-ms-word-break: break-all;
+	word-break: break-word;
+	hyphens: auto;
+	orphans: 3;
+	widows: 3;
 }
 
 body {
-  font: {
-    family: $font-family-copy;
-    weight: $global-font-weight;
-    size: $global-font-size;
-  }
-  line-height: $global-line-height;
-  color: $giges-copy-color;
+	color: $giges-copy-color;
 }
 
 address {
-  font-style: normal;
+	font-style: normal;
 }
 
 ::selection {
-  color: #fff;
-  background: #01bd00;
+	color: #fff;
+	background: #01bd00;
 }
-
-h1, h2, h3, h2, h5, h6 {
-  font-family: $font-family-headline;
-  font-weight: $global-font-weight;
+h1 {
+	@include type-layout(xxl,2.4);
+}
+h2 {
+	@include type-layout(xl,2);
+}
+h3 {
+	@include type-layout(l,2);
+}
+h4 {
+	@include type-layout(m,2);
+}
+h5 {
+	@include type-layout(s,2);
+}
+h6 {
+	@include type-layout(xs,2);
+}
+h1, h2, h3, h4, h5, h6 {
+	font-family: $giges-headline-font-family;
+	font-weight: weight(normal);
+	@include margin(0.5 0 0.5);
 }
 
 h1, h2, h3 {
-  page-break-after: avoid;
+	page-break-after: avoid;
 }
 
-main, aside {
-  padding-bottom: $global-padding;
+p, address {
+	@include margin(0 0 1);
 }
+
+/*main, aside {
+	@include margin(1 0 2);
+}*/
 
 a {
-  text-decoration: none;
-  color: $giges-orange;
-  border-bottom: 1px solid $giges-orange;
-  transition: all 0.2s ease 0s;
+	text-decoration: underline;
+	color: $giges-orange;
+	//border-bottom: 1px solid $giges-orange;
+	//padding-bottom: 3px !important;
+	transition: all 0.2s ease 0s;
 
-  &:focus, &:hover {
-    color: #CC5500;
-  }
+	&:focus, &:hover {
+		color: #CC5500;
+	}
 
 }
 
 img {
-  display: block;
-  max-width: 100%;
-  height: auto;
+	display: block;
+	max-width: 100%;
+	height: auto;
 }
 
 ul {
-  list-style-position: inside;
-  padding-left: 0;
+	list-style-position: inside;
+	padding-left: 0;
+	@include margin(0 0 1);
 }
 
 hr {
-  margin: $global-padding 0;
-  border: {
-    width: 1px 0px 0px;
-    style: solid none none;
-    color: $giges-copy-color -moz-use-text-color -moz-use-text-color;
-    image: none;
-  }
+	@include margin(0 0 2);
+	border: {
+		width: 1px 0px 0px;
+		style: solid none none;
+		color: $giges-copy-color -moz-use-text-color -moz-use-text-color;
+		image: none;
+	}
 }
 
 .container {
-  margin: 0 auto;
-  padding: ($global-padding*2) $global-padding;
-  max-width: 720px;
+	margin: 0 auto;
+	@include padding(2 0 2);
+	max-width: 40rem;
 }
 
 .logo {
-  padding-bottom: $global-padding;
-  max-width: 400px;
+	@include padding(0 0 2);
+	max-width: 20rem;
 }
