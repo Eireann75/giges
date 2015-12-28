@@ -619,8 +619,14 @@ hr {
 
 .container {
   margin: 0 auto;
-  padding: 2.8rem 0rem 2.8rem;
+  padding: 2.8rem 1.4rem 2.8rem;
   max-width: 40rem;
+}
+
+@media screen and (min-width: 720px) {
+  .container {
+    padding: 2.8rem 0rem 2.8rem;
+  }
 }
 
 .logo {
