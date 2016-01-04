@@ -1,0 +1,9 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+{% include "partials/head.nunjucks" %}
+</head>
+<body>
+	{% block content %}{% endblock %}
+</body>
+</html>

@@ -10,6 +10,8 @@ var browserify = require('browserify');
 var source = require('vinyl-source-stream');
 var buffer = require('vinyl-buffer');
 var uglify = require('gulp-uglify');
+var nunjucksRender = require('gulp-nunjucks-render');
+var data = require('gulp-data');
 
 gulp.task('watch', ['browserSync','sass',/*'browserify',*/'imgmin'], function() {
 	gulp.watch('./src/sass/**/*.+(scss|sass)', ['sass']);
@@ -28,11 +30,26 @@ gulp.task('browserSync', function() {
 	});
 });
 
+gulp.task('nunjucks', function() {
+  nunjucksRender.nunjucks.configure(['src/templates/'], {watch: false});
+  // Gets .html and .nunjucks files in pages
+  return gulp.src('src/pages/**/*.+(html|nunjucks)')
+  	// Get data from json file
+	.pipe(data(function() {
+	  return require('./src/data.json')
+	}))
+  // Renders template with nunjucks
+  .pipe(nunjucksRender())
+  // output files in src folder
+  .pipe(gulp.dest('src'));
+});
+
 gulp.task('sass', function() {
 	return gulp.src('./src/sass/*.+(scss|sass)')
 	.pipe(sourcemaps.init())
 	.pipe(sass({
 		outputStyle: 'expanded',
+		// Folgendes funktioniert noch nicht
 		includePaths: [
 			path.join(__dirname,'node_modules/support-for/sass'),
 			path.join(__dirname,'node_modules/typey/stylesheets'),
