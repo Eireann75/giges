@@ -623,12 +623,6 @@ hr {
   max-width: 40rem;
 }
 
-@media screen and (min-width: 720px) {
-  .container {
-    padding: 2.8rem 0rem 2.8rem;
-  }
-}
-
 .logo {
   padding: 0rem 0rem 2.8rem;
   max-width: 20rem;
