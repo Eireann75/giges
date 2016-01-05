@@ -1,9 +1,19 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="de" dir="ltr">
 <head>
 {% include "partials/head.nunjucks" %}
 </head>
 <body>
+	<div class="container">
 	{% block content %}{% endblock %}
+	</div>
+	<script src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js"></script>
+	<script>
+	WebFont.load({
+		google: {
+			families: ['Vollkorn:400:latin']
+		}
+	});
+	</script>
 </body>
 </html>

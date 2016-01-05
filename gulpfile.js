@@ -1,6 +1,6 @@
 var gulp = require('gulp');
 var sass = require('gulp-sass'),
-	path = require('path');
+	path = require('path'); // gehört zu 'sass' -> includePath / funktioniert noch nicht
 var autoprefixer = require('gulp-autoprefixer');
 var sourcemaps = require('gulp-sourcemaps');
 var browserSync = require('browser-sync');
@@ -31,17 +31,13 @@ gulp.task('browserSync', function() {
 });
 
 gulp.task('nunjucks', function() {
-  nunjucksRender.nunjucks.configure(['src/templates/'], {watch: false});
-  // Gets .html and .nunjucks files in pages
-  return gulp.src('src/pages/**/*.+(html|nunjucks)')
-  	// Get data from json file
-	.pipe(data(function() {
-	  return require('./src/data.json')
-	}))
-  // Renders template with nunjucks
-  .pipe(nunjucksRender())
-  // output files in src folder
-  .pipe(gulp.dest('src'));
+	nunjucksRender.nunjucks.configure(['src/templates/'], {watch: false});
+	return gulp.src('src/pages/**/*.+(html|nunjucks)')
+/*	.pipe(data(function() {
+		return require('./src/data.json')
+	}))*/
+	.pipe(nunjucksRender())
+	.pipe(gulp.dest('./dist'));
 });
 
 gulp.task('sass', function() {
